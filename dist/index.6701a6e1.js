@@ -23042,7 +23042,7 @@ MovieCard.propTypes = {
         Description: _propTypesDefault.default.string.isRequired,
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
-    onMovieClick: _propTypesDefault.default.func.isRequired
+    onMovieClick: _propTypesDefault.default.func.isRequire
 };
 
   $parcel$ReactRefreshHelpers$4249.postlude(module);
