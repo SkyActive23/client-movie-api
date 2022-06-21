@@ -32,7 +32,7 @@ export function RegistrationView(props) {
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Label>Password:</Form.Label>
-                                        <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minlength="8" placeholder="Password here" />
+                                        <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength="8" placeholder="Password here" />
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Label>Email:</Form.Label>
