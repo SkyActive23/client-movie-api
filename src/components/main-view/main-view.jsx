@@ -1,11 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import './main-view.scss';
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import { Container, Row } from 'react-bootstrap';
-import Col from 'react-bootstrap/Col';
+import { Nav, Navbar, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+
 
 export class MainView extends React.Component {
     constructor(){
@@ -60,20 +61,36 @@ export class MainView extends React.Component {
         if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
       
         return (
-            <Row className="main-view justify-content-md-center">
-                {selectedMovie
-                    ? (
-                        <Col md={8}>
-                            <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-                        </Col>
-                    )
-                    : movies.map(movie => (
-                        <Col md={3}>
-                            <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-                        </Col>
-                    ))
-                }
-            </Row>
+            <Container className="Background">
+                <Navbar variant="dark" expand="lg" className="nav">
+                    <Container>
+                        <Navbar.Brand href="#home">ApiFlix</Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto">
+                                <Nav.Link href="#home">Home</Nav.Link>
+                                <Nav.Link href="#link">Link</Nav.Link>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+                <div className="movie">
+                    <Row className="main-view justify-content-md-evenly m-0 p-8 align-items-center">
+                        {selectedMovie
+                            ? (
+                                <Col md={14}>
+                                    <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+                                </Col>
+                            )
+                            : movies.map(movie => (
+                                <Col md={6}>
+                                    <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                                </Col>
+                            ))
+                        }
+                    </Row>
+                </div>
+            </Container>
         ); 
 
 
