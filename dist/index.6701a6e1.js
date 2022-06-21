@@ -22948,9 +22948,9 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     render() {
-        const { movies , selectedMovie , user , registration  } = this.state;
+        const { movies , selectedMovie , user , register  } = this.state;
         if (!register) return(/*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
-            onRegistration: (register)=>this.onRegistration(register)
+            onRegistration: (register1)=>this.onRegistration(register1)
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
@@ -28402,7 +28402,7 @@ function RegistrationView(props) {
                                                     onChange: (e)=>setPassword(e.target.value)
                                                     ,
                                                     required: true,
-                                                    minlength: "8",
+                                                    minLength: "8",
                                                     placeholder: "Password here",
                                                     __source: {
                                                         fileName: "src/components/registration-view/registration-view.jsx",
