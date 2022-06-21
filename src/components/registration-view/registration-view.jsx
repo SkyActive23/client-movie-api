@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
-import { Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import { Nav, Navbar, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 import './registration-view.scss';
 
 export function RegistrationView(props) {
@@ -21,13 +21,27 @@ export function RegistrationView(props) {
 
         
 
-        <Container>
+        <Container className="Background">
+            <Navbar variant="dark" expand="lg" className="nav">
+                <Container>
+                    <Navbar.Brand href="#home">ApiFlix</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link href="#home">Home</Nav.Link>
+                            <Nav.Link href="#link">Link</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+  
+
             <Row>
                 <Col>
-                    <CardGroup>
+                    <CardGroup className='RegCardGroup'>
                         <Card>
-                            <Card.Body>
-                                <Card.Title>Register Here</Card.Title>
+                            <Card.Body className="RegCard">
+                                <Card.Title className='title'>Register Here</Card.Title>
                                 <Form>
                                     <Form.Group>
                                         <Form.Label>Username:</Form.Label>
@@ -45,7 +59,7 @@ export function RegistrationView(props) {
                                         <Form.Label>Birthday:</Form.Label>
                                         <Form.Control type="date" value={birthday} onChange={(e) => setBirthday(e.target.value)}/>
                                     </Form.Group>
-                                    <Button type="submit" onClick={handleSubmit}>Submit</Button>
+                                    <Button type="submit" onClick={handleSubmit} className="button">Submit</Button>
                                 </Form>
                             </Card.Body>
                         </Card>
