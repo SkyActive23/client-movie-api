@@ -18,6 +18,9 @@ export function RegistrationView(props) {
     };
 
     return (
+
+        
+
         <Container>
             <Row>
                 <Col>
