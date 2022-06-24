@@ -18,17 +18,42 @@ export class MainView extends React.Component {
         };
     }
 
-    componentDidMount(){
-        axios.get('https://myapiflix.herokuapp.com/movies')
-            .then(response => {
-                this.setState({
+    getMovies(token) {
+        axios.get('https://myapiflix.herokuapp.com/movies', {
+            headers: { Authorization: `Bearer ${token}`}
+        })
+        .then(response => {
+            // Assign the result to the state
+            this.setState({
                 movies: response.data
-                });
-            })
-            .catch(error => {
-                console.log(error);
             });
-      }
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
+
+    // componentDidMount(){
+    //     axios.get('https://myapiflix.herokuapp.com/movies')
+    //         .then(response => {
+    //             this.setState({
+    //             movies: response.data
+    //             });
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         });
+    //   }
+
+    componentDidMount() {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken !== null) {
+            this.setState({
+                user: localStorage.getItem('user')
+            });
+            this.getMovies(accessToken);
+        }
+    }
 
     setSelectedMovie(movie) {
         this.setState({
@@ -36,20 +61,17 @@ export class MainView extends React.Component {
         });
     }
 
-    // getMovies(token) {
-    //     axios.get('https://myapiflix.herokuapp.com/movies', {
-    //         headers: { Authorization: `Bearer ${token}`}
-    //     })
-    //     .then(response => {
-            // Assign the result to the state
-    //         this.setState({
-    //             movies: response.data
-    //         });
-    //     })
-    //     .catch(function (error) {
-    //         console.log(error);
-    //     });
-    // }
+
+    onLoggedIn(authData) {
+        console.log(authData);
+        this.setState({
+            user: authData.user.Username
+        });
+
+        localStorage.setItem('token', authData.token);
+        localStorage.setItem('user', authData.user.Username);
+        this.getMovies(authData.token);
+    }
 
     //When a user successfully registers
     onRegistration(register) {
@@ -58,22 +80,8 @@ export class MainView extends React.Component {
         });
     }
 
-    onLoggedIn(user) {
-        this.setState({
-          user
-        });
-    }
 
-    // onLoggedIn(authData) {
-    //     console.log(authData);
-    //     this.setState({
-    //         user: authData.user.Username
-    //     });
-
-    //     localStorage.setItem('token', authData.token);
-    //     localStorage.setItem('user', authData.user.Username);
-    //     this.getMovies(authData.token);
-    // }
+    
 
     
 
