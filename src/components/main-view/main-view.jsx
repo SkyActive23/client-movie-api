@@ -36,6 +36,21 @@ export class MainView extends React.Component {
         });
     }
 
+    getMovies(token) {
+        axios.get('https://myapiflix.herokuapp.com/movies', {
+            headers: { Authorization: `Bearer ${token}`}
+        })
+        .then(response => {
+            // Assign the result to the state
+            this.setState({
+                movies: response.data
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
+
     //When a user successfully registers
     onRegistration(register) {
         this.setState({
