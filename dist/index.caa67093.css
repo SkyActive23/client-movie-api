@@ -1,6 +1,7 @@
 .my-flix {
   color: steelblue;
 }
+
 .Background {
   background-color: rgba(54, 161, 243, 0.996);
   padding-bottom: 15px;
@@ -52,4 +53,34 @@
 .button {
   margin-top: 15px;
 }
+
+
+.fav-movie {
+  margin-bottom: 15px;
+}
+.fav-movie figure {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: auto;
+  width: 100%;
+}
+.fav-movie figure img {
+  height: 400px;
+  margin: auto;
+}
+.fav-movie button {
+  display: block;
+  height: 400px;
+  margin: auto;
+}
+.fav-movie ficaption {
+  text-align: center;
+}
+
+.card {
+  margin-bottom: 15px;
+}
+
 /*# sourceMappingURL=index.caa67093.css.map */
