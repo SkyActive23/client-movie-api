@@ -74,12 +74,13 @@ export function ProfileView(props) {
             <Row>
                 <FavoriteMovies 
                     movies={movies}
-                    favoriteMovie={favoriteMovies}/>
+                    favoriteMovie={favoriteMovies}
                     currentUser={currentUser}
-                <Button className="d-block mt-5" variant="warning" onClick={handleDelete}>Delete profile</Button>
+                    token={token}/>
                 {/* <Update handleSubmit={handleSubmit} handleUpdate={handleUpdate} /> */}
             </Row>
             <UpdateUser user={user}/>
+            <Button className="d-block mt-5" variant="warning" onClick={handleDelete}>Delete profile</Button>
         </Container>
     );
 }
