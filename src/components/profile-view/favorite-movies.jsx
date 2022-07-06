@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Nav, Navbar, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import { Nav, Navbar, Form, Button, Card, CardGroup, Container, Row, Col, Figure } from 'react-bootstrap';
 import './profile-view.scss'
 
 export function FavoriteMovies({ props }) {
@@ -26,36 +26,37 @@ export function FavoriteMovies({ props }) {
     }
 
     return (
-        <Card>
-            <Card.Body>
-                <Row>
-                    <Col xs={12}>
-                        <h4>Favorite Movies</h4>
-                    </Col>
-                </Row>
-                <Row>
-                    {favoriteMovieList.map(({movie}) => {
-                        return(
-                            <Col xs={12} md={6} lg={3} key={_id} className='fav-movie'>
-                                <Figure>
-                                <Link to={'/movies/${movies._id}'}>
-                                    <Figure.Image
-                                        src={movie.ImagePath}
-                                        // alt={Title}
-                                    />
-                                    <Figure.Caption>
-                                        {Title}
-                                    </Figure.Caption>
+        <Fragment>
+            {favoriteMoviesList.length === 0 ? (
+                <p>You have no favorite movies yet.</p>
+                ) : (
+                    favoriteMoviesList.map((movie) => {
+                        return (
+                        <Col xs={10} sm={8} md={6} lg={4} >
+                            <Card id="movie-card">
+                                <Link to={`/movies/${movie._id}`}>
+                                    <Card.Img variant="top" src={movie.ImagePath} />
+                                </Link>
+                                <Card.Body>
+                                    <Card.Title>{movie.Title}</Card.Title>
+                                    <Card.Text>{movie.Description}</Card.Text>
+                                    <Link to={`/movies/${movie._id}`}>
+                                        <Button className="button" variant="outline-primary" size="sm">Open</Button>
                                     </Link>
-                                </Figure>
-                                <Button variant="secondary" onClick={() => removeFav(movie._id)}>Remove</Button>
-                            </Col>
+                                    <Button 
+                                        className="button ml-2" 
+                                        variant="outline-primary" 
+                                        size="sm" onClick={()=> {removeFav(movie._id)}} >
+                                        Remove
+                                    </Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
                         )
                     })
-                    }
-                </Row>
-            </Card.Body>
-        </Card>
+                )
+            }
+        </Fragment>
     )
 }
 
