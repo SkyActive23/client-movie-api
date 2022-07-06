@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Nav, Navbar, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
@@ -73,7 +72,7 @@ export function UpdateUser(props) {
     };
 
     return (
-        <>
+        <Container>
             <h4>Update</h4>
             <Form>
                 <Form.Group>
@@ -120,6 +119,6 @@ export function UpdateUser(props) {
                     Update
                 </Button>
             </Form>
-        </>
+        </Container>
     )
 }
