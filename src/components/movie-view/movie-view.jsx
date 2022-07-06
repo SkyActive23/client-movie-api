@@ -29,7 +29,7 @@ export class MovieView extends React.Component {
                     <div className="movie-view">
                         <Row>
                             <div className="movie-poster">
-                                <img src={movie.ImagePath} crossorgin="anonymous" />
+                                <img src={movie.ImagePath} />
                             </div>
                         </Row>
                         <Row>
