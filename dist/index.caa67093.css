@@ -1,14 +1,57 @@
-.my-flix {
-  color: steelblue;
+.app {
+  background-color: rgb(89, 9, 9);
+}
+.movie-card {
+  background-color: black;
+  margin: 5%;
+}
+.movie-card .movie-body {
+  background-color: lightgray;
+  height: 300px;
+}
+.movie-card .open-button {
+  background-color: rgba(255, 255, 255, 0.996);
+  color: rgba(54, 161, 243, 0.996);
+  width: 100%;
+}
+.movie-card .add-button {
+  background-color: rgb(33, 109, 65);
+  width: 100%;
+}
+.label {
+  font-weight: bold;
 }
 
-.Background {
-  background-color: rgba(54, 161, 243, 0.996);
-  padding-bottom: 15px;
+.movie-view {
+  margin: 1%;
+}
+.movie-view .movie-col {
+  background-color: lightgray;
+}
+.movie-view .movie-info {
+  background-color: lightgray;
+  padding: 2%;
+}
+.movie-view .director-button {
+  background-color: rgba(255, 255, 255, 0.996);
+  color: rgba(54, 161, 243, 0.996);
+}
+.movie-view .back-button {
+  background-color: rgba(255, 255, 255, 0.996);
+  color: rgba(54, 161, 243, 0.996);
+  width: 100%;
+}
+.movie-view .add-button {
+  background-color: rgb(33, 109, 65);
+  width: 100%;
 }
 
-.nav {
-  background: black;
+.director-button {
+  background-color: rgba(255, 255, 255, 0.996);
+  color: rgba(54, 161, 243, 0.996);
+}
+.main-view {
+  background-color: rgb(89, 9, 9);
 }
 
 .movie {
@@ -20,8 +63,14 @@
   margin-top: 15px;
 }
 .Background {
-  background-color: rgba(54, 161, 243, 0.996);
+  margin: 1%;
+  background-color: rgba(0, 0, 0, 0.996);
   padding-bottom: 15px;
+}
+.Background .button {
+  margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.996);
+  color: rgba(54, 161, 243, 0.996);
 }
 
 .nav {
@@ -32,12 +81,8 @@
   background: lightgrey;
   color: black;
 }
-
-.button {
-  margin-top: 15px;
-}
 .Background {
-  background-color: rgba(54, 161, 243, 0.996);
+  background-color: rgba(0, 0, 0, 0.996);
   padding-bottom: 15px;
 }
 
@@ -53,34 +98,103 @@
 .button {
   margin-top: 15px;
 }
-
-
-
-.fav-movie {
-  margin-bottom: 15px;
+.director-card {
+  margin: 1%;
 }
-.fav-movie figure {
-  position: relative;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin: auto;
+.director-card .director-title {
+  background-color: lightgray;
+}
+.director-card .card-body {
+  background-color: lightgray;
+}
+.director-card .back-button {
+  background-color: rgba(255, 255, 255, 0.996);
+  color: rgba(54, 161, 243, 0.996);
+}
+
+.profile-page {
+  background-color: lightgray;
+}
+
+.profile-form {
+  margin: 5px;
+  padding: 15px;
+}
+.profile-form h4 {
+  background-color: rgba(0, 0, 0, 0.996);
+  color: rgba(255, 255, 255, 0.996);
   width: 100%;
-}
-.fav-movie figure img {
-  height: 400px;
-  margin: auto;
-}
-.fav-movie button {
-  display: block;
-  height: 400px;
-  margin: auto;
-}
-.fav-movie ficaption {
   text-align: center;
 }
+.profile-form .label {
+  font-weight: bold;
+}
+.profile-form .value {
+  background-color: rgba(255, 255, 255, 0.996);
+}
 
-.card {
-  margin-bottom: 15px;
+.danger {
+  margin: 10px;
+  float: right;
+}
+
+.Card-Box {
+  background-color: gray;
+  padding: 15px;
+  margin: 20px;
+}
+.Card-Box h4 {
+  background-color: rgba(0, 0, 0, 0.996);
+  color: rgba(255, 255, 255, 0.996);
+  margin-top: 10px;
+  text-align: center;
+}
+.Card-Box .Movie {
+  background-color: black;
+  border: 2px solid rgba(0, 0, 0, 0.996);
+  padding: 1%;
+  width: 400px;
+  margin: 10px;
+}
+.Card-Box .movie-card {
+  background-color: lightgray;
+  height: 300px;
+}
+.Card-Box .card-body {
+  height: 300px;
+}
+.Card-Box .open-button {
+  background-color: rgba(255, 255, 255, 0.996);
+  color: rgba(54, 161, 243, 0.996);
+  width: 100%;
+}
+.Card-Box .remove-button {
+  background-color: rgb(89, 9, 9);
+  width: 100%;
+}
+
+#update-form {
+  background-color: rgba(255, 255, 255, 0.996);
+  padding: 15px;
+  margin: 10px;
+}
+#update-form h4 {
+  background-color: rgba(0, 0, 0, 0.996);
+  color: rgba(255, 255, 255, 0.996);
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+#update-form .edit {
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.996);
+  color: rgba(54, 161, 243, 0.996);
+}
+
+.favorites {
+  background-color: rgba(255, 255, 255, 0.996);
+}
+.nav-bar {
+  border: 2px solid rgba(0, 0, 0, 0.996);
 }
 /*# sourceMappingURL=index.caa67093.css.map */
