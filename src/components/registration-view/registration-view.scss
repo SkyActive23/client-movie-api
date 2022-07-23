@@ -1,8 +1,17 @@
-
+$blue-color: rgba(54, 161, 243, 0.996);
+$white-color: rgba(255, 255, 255, 0.996);
+$black-color: rgba(0, 0, 0, 0.996);
+$red-color: rgb(89, 9, 9);
 
 .Background {
-    background-color: rgba(54, 161, 243, 0.996);
+    margin: 1%;
+    background-color: $black-color;
     padding-bottom: 15px;
+    .button{
+        margin-top: 15px;
+        background-color: $white-color;
+        color: $blue-color;
+    }
 }
 
 .nav {
@@ -14,6 +23,3 @@
     color: black;
 }
 
-.button{
-    margin-top: 15px;
-}
