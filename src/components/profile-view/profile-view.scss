@@ -1,27 +1,122 @@
-.fav-movie {
-    margin-bottom: 15px;
-    figure {
-        position: relative;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        margin: auto;
+$blue-color: rgba(54, 161, 243, 0.996);
+$white-color: rgba(255, 255, 255, 0.996);
+$black-color: rgba(0, 0, 0, 0.996);
+$red-color: rgb(89, 9, 9);
+
+.profile-page {
+    background-color: lightgray;
+}
+.profile-form {
+	margin: 5px;
+    padding: 15px;
+
+    h4{
+        background-color: $black-color;
+        color: $white-color; 
         width: 100%;
-        img {
-            height: 400px;
-            margin:auto;
-        }
-    }
-    button {
-        display: block;
-        height: 400px;
-        margin: auto;
-    }
-    ficaption {
         text-align: center;
+    }
+    .label {
+        font-weight: bold;
+    }
+    .value {
+        background-color: $white-color;
+    }   
+}
+
+
+.danger {
+    margin: 10px;
+    float: right;
+}
+
+
+.Card-Box {
+    background-color: gray;
+    padding: 15px;
+    margin: 20px;
+    h4 {
+        background-color: $black-color;
+        color: $white-color; 
+        margin-top: 10px;
+        text-align: center;
+    }   .Movie {
+            background-color: black;
+            border: 2px solid $black-color;
+            padding: 1%;
+            width:400px;
+            margin:10px;
+            
+        }   .movie-card {
+                background-color: lightgray;
+                height: 300px;
+                
+            }   .card-body {
+                    height: 300px;
+                }   .open-button {
+                        background-color: $white-color;
+                        color:rgba(54, 161, 243, 0.996);
+                        width: 100%;
+                    }   .remove-button {
+                            background-color: $red-color;
+                            width: 100%;
+                        }
+}
+
+
+
+
+
+
+#update-form {
+	background-color: $white-color;
+    padding: 15px;
+    margin: 10px;
+    
+    h4 {
+        background-color: $black-color;
+        color: $white-color;
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }   .edit {
+        margin:10px;
+        background-color: $white-color;
+        color: $blue-color;
     }
 }
 
-.card {
-    margin-bottom: 15px;
+
+
+.favorites {
+    background-color: $white-color;
 }
+
+
+// .fav-movie {
+//     margin-bottom: 15px;
+//     figure {
+//         position: relative;
+//         overflow: hidden;
+//         text-overflow: ellipsis;
+//         white-space: nowrap;
+//         margin: auto;
+//         width: 100%;
+//         img {
+//             height: 400px;
+//             margin:auto;
+//         }
+//     }
+//     button {
+//         display: block;
+//         height: 400px;
+//         margin: auto;
+//     }
+//     ficaption {
+//         text-align: center;
+//     }
+// }
+
+// .card {
+//     margin-bottom: 15px;
+// }
