@@ -1,37 +1,42 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Container, Button, Row, Col } from 'react-bootstrap';
+import { Container, Button, Row, Col, Card } from 'react-bootstrap';
 
 import './movie-view.scss';
+import axios from 'axios';
 
 export class MovieView extends React.Component {
 
-    keypressCallback(event) {
-        console.log(event.key);
-    }
-    
-    componentDidMount() {
-        document.addEventListener('keypress', this.keypressCallback);
-    }
 
-    componentWillUnmount() {
-        document.removeEventListener('keypress', this.keypressCallback);
-    }
+    // Add a Favorite Movie
+    addToFavoriteList(movieId) {
+		const currentUser = localStorage.getItem('user');
+		const token = localStorage.getItem('token');
+		axios.post(`https://myapiflix.herokuapp.com/users/${currentUser}/movies/${movieId}`,
+			{},
+			{
+				headers: { Authorization: `Bearer ${token}` }
+			})
+			.then((response) => {
+				console.log(response.data)
+				alert(`The movie was successfully add to your list.`)
+			}).
+			catch(error => console.error(error))
+	}
 
-    render() {
-        const { movie, onBackClick } = this.props;
-
+	render() {
+		const { movie, onBackClick } = this.props;
         
         return (
-            <Container>
-                <Col>
-                    <div className="movie-view">
-                        <Row>
+            <Card className="movie-view">
+                <Col className='movie-col'>
+                    <div className="movie-info">
+                        {/* <Row>
                             <div className="movie-poster">
-                                <img src={movie.ImagePath} />
+                                <img src={movie.ImageURL} />
                             </div>
-                        </Row>
+                        </Row> */}
                         <Row>
                             <div className="movie-title">
                                 <span className="label">Title: </span>
@@ -46,49 +51,52 @@ export class MovieView extends React.Component {
                         </Row>
                         <Row>
                             <div className="movie-genre">
-                                <span className="genre">Genre: </span>
+                                <span className="label">Genre: </span>
                                 <span className="value">{movie.Genre.Name}</span>
-                                <Link to={`/genres/${movie.Genre.Name}`}>
-                                    <Button variant="link">Genre</Button>
-                                </Link>
                             </div>
                         </Row>
                         <Row>
                             <div className="movie-director">
-                                <span className="director">Director: </span>
+                                <span className="label">Director: </span>
                                 <span className="value">{movie.Director.Name}</span>
+                            </div>
+                        </Row>
+                        <Row>
+                            <div>
                                 <Link to={`/directors/${movie.Director.Name}`}>
-                                    <Button variant="link">Director</Button>
+                                    <Button className='director-button' variant="outline-primary">Director</Button>
                                 </Link>
                             </div>
                         </Row>
                         <Row>
                             <div className="director-bio">
-                                <span className="director">Bio: </span>
+                                <span className="label">Bio: </span>
                                 <span className="value">{movie.Director.Bio}</span>
                             </div>
                         </Row>
                         <Row>
-                            <button onClick={() => { onBackClick(null); }} className="button">Back</button>
+                            
                         </Row>
                     </div>
+                    <Button className="add-button" id="favorites-btn" onClick={() => this.addToFavoriteList(movie._id)}>Add</Button>
+                    <Button onClick={() => { onBackClick(null); }} className="back-button">Back</Button>
                 </Col>
-            </Container>
+            </Card>
         );
     }
 }
 
-// MovieView.propTypes = {
-//     movie: PropTypes.shape({
-//         Title: PropTypes.string.isRequired,
-//         Description: PropTypes.string.isRequired,
-//         ImagePath: PropTypes.string.isRequired,
-//         Director: PropTypes.shape({
-//             Name: PropTypes.string.isRequired,
-//             Bio: PropTypes.string.isRequired,
-//         }),
-//         Genre: PropTypes.shape({
-//             Name: PropTypes.string.isRequired,
-//         })
-//     }).isRequired,
-// };
+MovieView.propTypes = {
+    movie: PropTypes.shape({
+        Title: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
+        // ImagePath: PropTypes.string.isRequired,
+        Director: PropTypes.shape({
+            Name: PropTypes.string.isRequired,
+            Bio: PropTypes.string.isRequired,
+        }),
+        Genre: PropTypes.shape({
+            Name: PropTypes.string.isRequired,
+        })
+    }).isRequired,
+};
