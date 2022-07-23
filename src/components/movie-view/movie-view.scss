@@ -1,0 +1,38 @@
+$blue-color: rgba(54, 161, 243, 0.996);
+$white-color: rgba(255, 255, 255, 0.996);
+$black-color: rgba(0, 0, 0, 0.996);
+$green-color: rgb(33, 109, 65);
+$red-color: rgb(89, 9, 9);
+
+.label {
+    font-weight: bold;
+}
+
+.movie-view{
+    margin:1%;
+    .movie-col{
+        background-color: lightgray;
+    }
+    .movie-info {
+            background-color: lightgray;
+            padding: 2%;   
+        }   .director-button {
+            background-color: $white-color;
+            color: $blue-color;
+        }   .back-button {
+            background-color: $white-color;
+            color: $blue-color;
+            width: 100%;
+        }   .add-button {
+                background-color: $green-color;
+                width: 100%;
+            }
+            
+            
+            
+}
+
+.director-button {
+    background-color: $white-color;
+    color: $blue-color;
+}

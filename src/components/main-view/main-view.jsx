@@ -87,7 +87,7 @@ export class MainView extends React.Component {
 
       
         return (
-            <Router>
+            <Router className='main-view'>
                 <NavbarView user={user} />
                 <Row className="main-view justify-content-md-center">
 
@@ -123,7 +123,7 @@ export class MainView extends React.Component {
                             <LoginView onLoggedIn={user => this.onLoggedIn(user)}/>
                         </Col>
                         if (movies.length ===0) return <div className='main-view'/>;
-                        return <Col md={8}>
+                        return <Col md={12}>
                             <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
                         </Col>
                     }} />
@@ -133,7 +133,7 @@ export class MainView extends React.Component {
                             <LoginView onLoggedIn={user => this.onLoggedIn(user)}/>
                         </Col>
                         if (movies.length === 0) return <div className="main-view" />;
-                        return <Col md={8}>
+                        return <Col md={12}>
                             <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
                         </Col>
                     }} />
@@ -142,7 +142,7 @@ export class MainView extends React.Component {
                             <LoginView onLoggedIn={user => this.onLoggedIn(user)}/>
                         </Col>
                         if (movies.length === 0) return <div className="main-view" />;
-                        return <Col md={8}>
+                        return <Col md={12}>
                             <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
                         </Col>
                     }} />
@@ -153,7 +153,7 @@ export class MainView extends React.Component {
                         </Col>
                         if (movies.length === 0) return <div className="main-view" />;
                         if (!user) return <Redirect to="/" />
-                        return <Col md={8}>
+                        return <Col md={12}>
                             <ProfileView movies={movies} user={user === match.params.username} onBackClick={() => history.goBack()} />
                         </Col>
                     }} />

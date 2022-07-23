@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export class GenreView extends React.Component {
 
   render() {
-    const { genre, movie, onBackClick } = this.props;
+    const { genre, onBackClick } = this.props;
 
     return (
 

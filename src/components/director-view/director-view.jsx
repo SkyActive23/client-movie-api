@@ -12,13 +12,12 @@ export class DirectorView extends React.Component {
     const { director, onBackClick } = this.props;
 
     return (
-      <Card text='dark' className="directorCard">
-        <Card.Header className="directorTitle">{director.Name}</Card.Header>
-        <Card.Body>
+      <Card text='dark' className="director-card">
+        <Card.Header className="director-title">{director.Name}</Card.Header>
+        <Card.Body className='card-body'>
           <Card.Text> Biography: {director.Bio}</Card.Text>
-          <Button variant="warning" onClick={() => { onBackClick() }}>Back</Button>
         </Card.Body>
-        <Button className="d-block mt-3" onClick={() => { onBackClick(null); }} variant="warning">Back</Button>
+        <Button className='back-button' onClick={() => { onBackClick(null); }}>Back</Button>
       </Card>
     )
   }

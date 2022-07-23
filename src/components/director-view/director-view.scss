@@ -1,0 +1,16 @@
+$blue-color: rgba(54, 161, 243, 0.996);
+$white-color: rgba(255, 255, 255, 0.996);
+$black-color: rgba(0, 0, 0, 0.996);
+$red-color: rgb(89, 9, 9);
+
+.director-card {
+    margin: 1%;
+    .director-title {
+        background-color: lightgray;
+    } .card-body {
+        background-color: lightgray;
+    }   .back-button {
+        background-color: $white-color;
+        color: $blue-color;
+    }
+}

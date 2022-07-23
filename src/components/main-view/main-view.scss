@@ -1,10 +1,9 @@
-.Background {
-    background-color: rgba(54, 161, 243, 0.996);
-    padding-bottom: 15px;
-}
+$red-color: rgb(89, 9, 9);
+$black-color: rgba(0, 0, 0, 0.996);
+$red-color: rgb(89, 9, 9);
 
-.nav {
-    background: black;
+.main-view {
+    background-color: $red-color;
 }
 
 .movie {

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card } from 'react-bootstrap';
 import axios from 'axios';
+import './movie-card.scss';
 
 import { Link } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ export class MovieCard extends React.Component {
   addToFavoriteList(movieId) {
     const currentUser = localStorage.getItem('user');
     const token = localStorage.getItem('token');
-    axios.put(`https://myapiflix.herokuapp.com/users/${currentUser}/movies/${movieId}`, 
+    axios.post(`https://myapiflix.herokuapp.com/users/${currentUser}/movies/${movieId}`, 
     {},
     {
       headers: { Authorization: `Bearer ${token}`}
@@ -24,18 +25,16 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card className='MovieCard'>
-        <Link>
-          <Card.Img variant="top" src={movie.ImagePath} crossOrigin="anonymous" />
-        </Link>
-        <Card.Body>
+      <Card className='movie-card'>
+        <Card.Body className='movie-body'>
+          {/* <Card.Img variant="top" src={movie.ImageURL}/> */}
           <Card.Title>{movie.Title}</Card.Title>
           <Card.Text>{movie.Description}</Card.Text>
-          <Link to={`/movies/${movie._id}`}>
-            <Button variant='link'>Open</Button>
-          </Link>
-          <Button className="button ml-2" variant="outline-primary" size="sm" onClick={() => this.addToFavoriteList(movie._id) }>Add</Button>
         </Card.Body>
+        <Button className="add-button" onClick={() => this.addToFavoriteList(movie._id) }>Add</Button>
+        <Link to={`/movies/${movie._id}`}>
+            <Button className='open-button'>Open</Button>
+        </Link>
       </Card>
     );
   }
@@ -45,7 +44,7 @@ MovieCard.propTypes = {
   movie: PropTypes.shape({
     Title: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
-    // ImagePath: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired,
     Director: PropTypes.shape({
       Name: PropTypes.string.isRequired,
       Bio: PropTypes.string.isRequired,

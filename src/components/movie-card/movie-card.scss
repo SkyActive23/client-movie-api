@@ -1,0 +1,20 @@
+$blue-color: rgba(54, 161, 243, 0.996);
+$white-color: rgba(255, 255, 255, 0.996);
+$black-color: rgba(0, 0, 0, 0.996);
+$green-color: rgb(33, 109, 65);
+
+.movie-card{
+    background-color: black;
+    margin:5%;
+  .movie-body {
+        background-color: lightgray;
+        height: 300px;   
+    }   .open-button {
+        background-color: $white-color;
+        color:rgba(54, 161, 243, 0.996);
+        width: 100%;
+    }   .add-button {
+            background-color: $green-color;
+            width: 100%;
+        }
+}
