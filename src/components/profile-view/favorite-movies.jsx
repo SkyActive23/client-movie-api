@@ -40,12 +40,12 @@ export function FavoriteMovies(props) {
                         return (
                             <Col className='Movie' xs={12} md={6} lg={3} key={movie._id}>
                                 <Card className='movie-card'>
-                                    <Link to={`/movies/${movie._id}`}>
-                                        {/* <Card.Img variant="top" src={movie.ImageURL}/> */}
-                                    </Link>
                                     <Card.Body className='card-body'>
                                         <Card.Title>{movie.Title}</Card.Title>
                                     </Card.Body>
+                                    <Link to={`/movies/${movie._id}`}>
+                                        <Card.Img  className="movie-img" variant="top" src={movie.ImageURL}/>
+                                    </Link>
                                     <Button className="remove-button" size="sm" onClick={() => { handleDelete(movie._id) }} >
                                             Remove
                                     </Button>
