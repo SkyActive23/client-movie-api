@@ -27,14 +27,13 @@ export class MovieCard extends React.Component {
     return (
       <Card className='movie-card'>
         <Card.Body className='movie-body'>
-          {/* <Card.Img variant="top" src={movie.ImageURL}/> */}
-          <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text>{movie.Description}</Card.Text>
+          <Card.Title className='title'>{movie.Title}</Card.Title>
+          <Card.Img className='movie-img' variant="top" src={movie.ImageURL}/>
+          <Button className="add-button" onClick={() => this.addToFavoriteList(movie._id) }>Add</Button>
+          <Link to={`/movies/${movie._id}`}>
+              <Button className='open-button'>Open</Button>
+          </Link>
         </Card.Body>
-        <Button className="add-button" onClick={() => this.addToFavoriteList(movie._id) }>Add</Button>
-        <Link to={`/movies/${movie._id}`}>
-            <Button className='open-button'>Open</Button>
-        </Link>
       </Card>
     );
   }
