@@ -116,6 +116,7 @@
   background-color: lightgray;
 }
 
+<<<<<<< Updated upstream
 .profile-form {
   margin: 5px;
   padding: 15px;
@@ -123,6 +124,17 @@
 .profile-form h4 {
   background-color: rgba(0, 0, 0, 0.996);
   color: rgba(255, 255, 255, 0.996);
+=======
+.fav-movie {
+  margin-bottom: 15px;
+}
+.fav-movie figure {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: auto;
+>>>>>>> Stashed changes
   width: 100%;
   text-align: center;
 }
@@ -197,4 +209,5 @@
 .nav-bar {
   border: 2px solid rgba(0, 0, 0, 0.996);
 }
+
 /*# sourceMappingURL=index.caa67093.css.map */
