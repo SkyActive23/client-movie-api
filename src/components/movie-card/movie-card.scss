@@ -4,6 +4,7 @@ $black-color: rgba(0, 0, 0, 0.996);
 $green-color: rgb(33, 109, 65);
 
 .movie-card{
+    display:flex;
     background-color: $black-color;
     margin:5%;
     width: 250px;
