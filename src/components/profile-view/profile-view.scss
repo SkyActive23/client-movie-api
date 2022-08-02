@@ -32,6 +32,8 @@ $red-color: rgb(89, 9, 9);
 
 
 .Card-Box {
+    display:flex;
+    justify-content: center;
     background-color: gray;
     padding: 15px;
     margin: 20px;
@@ -52,6 +54,8 @@ $red-color: rgb(89, 9, 9);
             }   .card-body {
                     height: 300px;
                 }   .movie-img {
+                        display: flex;
+                        justify-content: center;
                         height: 150px;
                         width: 150px;
                         padding-bottom: 10px;
