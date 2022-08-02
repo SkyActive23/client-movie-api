@@ -2,6 +2,7 @@
   background-color: rgb(89, 9, 9);
 }
 .movie-card {
+  display: flex;
   background-color: rgba(0, 0, 0, 0.996);
   margin: 5%;
   width: 250px;
@@ -36,6 +37,7 @@
 }
 
 .movie-view {
+  display: flex;
   margin: 1%;
   float: center;
 }
@@ -157,6 +159,8 @@
 }
 
 .Card-Box {
+  display: flex;
+  justify-content: center;
   background-color: gray;
   padding: 15px;
   margin: 20px;
@@ -182,6 +186,8 @@
   height: 300px;
 }
 .Card-Box .movie-img {
+  display: flex;
+  justify-content: center;
   height: 150px;
   width: 150px;
   padding-bottom: 10px;
