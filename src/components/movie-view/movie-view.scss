@@ -9,6 +9,7 @@ $red-color: rgb(89, 9, 9);
 }
 
 .movie-view{
+    display: flex;
     margin:1%;
     float: center;
     .movie-col{
