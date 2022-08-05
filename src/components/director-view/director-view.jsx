@@ -13,11 +13,11 @@ export class DirectorView extends React.Component {
 
     return (
       <Card text='dark' className="director-card">
-        <Card.Header className="director-title">{director.Name}</Card.Header>
+        <Card.Header className="director-title"><h4>{director.Name}</h4></Card.Header>
         <Card.Body className='card-body'>
           <Card.Text> Biography: {director.Bio}</Card.Text>
         </Card.Body>
-        <Button className='back-button' onClick={() => { onBackClick(null); }}>Back</Button>
+        <Button variant='secondary' className='back-button' onClick={() => { onBackClick(null); }}>Back</Button>
       </Card>
     )
   }
