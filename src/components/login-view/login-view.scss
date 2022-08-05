@@ -4,17 +4,13 @@ $black-color: rgba(0, 0, 0, 0.996);
 $red-color: rgb(89, 9, 9);
 
 .Background {
-    background-color: $black-color;
+    background-color: $red-color;
     padding-bottom: 15px;
 }
 
-.nav {
-    background: black;
-}
-
-.LogCard {
-    background-color: lightgrey;
-    color: black;
+h4 {
+    border: 2px solid black;
+    text-align: center;
 }
 
 .button{
