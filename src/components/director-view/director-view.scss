@@ -6,11 +6,9 @@ $red-color: rgb(89, 9, 9);
 .director-card {
     margin: 1%;
     .director-title {
-        background-color: lightgray;
+        background-color: white;
+        text-align: center;
     } .card-body {
-        background-color: lightgray;
-    }   .back-button {
-        background-color: $white-color;
-        color: $blue-color;
+        background-color: white;
     }
 }
