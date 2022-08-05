@@ -1,35 +1,35 @@
 .app {
   background-color: rgb(89, 9, 9);
 }
+h4 {
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid black;
+}
+
 .movie-card {
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.996);
-  margin: 5%;
-  width: 250px;
-  align-items: center;
-}
-.movie-card .movie-body {
-  background-color: lightgray;
-  height: 325px;
-  width: 225px;
-  align-items: center;
-}
-.movie-card .movie-img {
-  height: 150px;
-  width: 150px;
-  padding-bottom: 10px;
-  align-items: center;
-}
-.movie-card .title {
-  align-items: center;
-}
-.movie-card .open-button {
-  background-color: rgba(255, 255, 255, 0.996);
-  color: rgba(54, 161, 243, 0.996);
+  margin-bottom: 15px;
   width: 100%;
 }
-.movie-card .add-button {
-  background-color: rgb(33, 109, 65);
+.movie-card figure {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: auto;
+  width: 100%;
+}
+.movie-card figure img {
+  display: block;
+  height: 400px;
+  margin: auto;
+}
+.movie-card figure figcaption {
+  text-align: center;
+}
+.movie-card button {
+  display: block;
+  margin: auto;
   width: 100%;
 }
 .label {
@@ -37,33 +37,40 @@
 }
 
 .movie-view {
-  display: flex;
-  margin: 1%;
-  float: center;
-}
-.movie-view .movie-col {
-  background-color: lightgray;
-}
-.movie-view .movie-info {
-  background-color: lightgray;
-  padding: 2%;
-}
-.movie-view .movie-img {
-  height: 250px;
-  float: center;
-}
-.movie-view .director-button {
-  background-color: rgba(255, 255, 255, 0.996);
-  color: rgba(54, 161, 243, 0.996);
-}
-.movie-view .back-button {
-  background-color: rgba(255, 255, 255, 0.996);
-  color: rgba(54, 161, 243, 0.996);
+  margin-bottom: 15px;
   width: 100%;
+}
+.movie-view figure {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: auto;
+  width: 100%;
+  padding: 25px;
+}
+.movie-view figure img {
+  display: block;
+  height: 500px;
+  width: 300px;
+  margin: auto;
+}
+.movie-view .text-card {
+  margin: auto;
+  border: 2px solid black;
+  padding: 5px 25px 5px 25px;
 }
 .movie-view .add-button {
-  background-color: rgb(33, 109, 65);
+  display: block;
+  margin: auto;
   width: 100%;
+  margin: 20px 0 10px 0;
+}
+.movie-view .back-button {
+  display: block;
+  margin: auto;
+  width: 100%;
+  margin: 2px 0 2px 0;
 }
 
 .director-button {
@@ -89,30 +96,25 @@
 }
 .Background .button {
   margin-top: 15px;
-  background-color: rgba(255, 255, 255, 0.996);
-  color: rgba(54, 161, 243, 0.996);
 }
 
-.nav {
-  background: black;
+h4 {
+  border: 2px solid black;
+  text-align: center;
 }
 
 .RegCard {
-  background: lightgrey;
+  background: white;
   color: black;
 }
 .Background {
-  background-color: rgba(0, 0, 0, 0.996);
+  background-color: rgb(89, 9, 9);
   padding-bottom: 15px;
 }
 
-.nav {
-  background: black;
-}
-
-.LogCard {
-  background-color: lightgrey;
-  color: black;
+h4 {
+  border: 2px solid black;
+  text-align: center;
 }
 
 .button {
@@ -122,106 +124,54 @@
   margin: 1%;
 }
 .director-card .director-title {
-  background-color: lightgray;
+  background-color: white;
+  text-align: center;
 }
 .director-card .card-body {
-  background-color: lightgray;
-}
-.director-card .back-button {
-  background-color: rgba(255, 255, 255, 0.996);
-  color: rgba(54, 161, 243, 0.996);
+  background-color: white;
 }
 
-.profile-page {
-  background-color: lightgray;
-}
-
-.profile-form {
+.container {
   margin: 5px;
-  padding: 15px;
 }
-.profile-form h4 {
-  background-color: rgba(0, 0, 0, 0.996);
-  color: rgba(255, 255, 255, 0.996);
-  width: 100%;
+
+h4 {
   text-align: center;
-}
-.profile-form .label {
   font-weight: bold;
-}
-.profile-form .value {
-  background-color: rgba(255, 255, 255, 0.996);
+  border: 2px solid black;
 }
 
-.danger {
-  margin: 10px;
-  float: right;
+.fav-movie {
+  margin-bottom: 15px;
 }
-
-.Card-Box {
-  display: flex;
-  justify-content: center;
-  background-color: gray;
-  padding: 15px;
-  margin: 20px;
+.fav-movie figure {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: auto;
+  width: 100%;
 }
-.Card-Box h4 {
-  background-color: rgba(0, 0, 0, 0.996);
-  color: rgba(255, 255, 255, 0.996);
-  margin-top: 10px;
+.fav-movie figure img {
+  display: block;
+  height: 400px;
+  margin: auto;
+}
+.fav-movie figure figcaption {
   text-align: center;
 }
-.Card-Box .Movie {
-  padding: 1%;
-  width: 400px;
-  margin: 10px;
-  align-content: center;
-}
-.Card-Box .movie-card {
-  background-color: lightgray;
-  height: 350px;
-  align-items: center;
-}
-.Card-Box .card-body {
-  height: 300px;
-}
-.Card-Box .movie-img {
-  display: flex;
-  justify-content: center;
-  height: 150px;
-  width: 150px;
-  padding-bottom: 10px;
-}
-.Card-Box .open-button {
-  background-color: rgba(255, 255, 255, 0.996);
-  color: rgba(54, 161, 243, 0.996);
-  width: 100%;
-}
-.Card-Box .remove-button {
-  background-color: rgb(89, 9, 9);
+.fav-movie button {
+  display: block;
+  margin: auto;
   width: 100%;
 }
 
-#update-form {
-  background-color: rgba(255, 255, 255, 0.996);
-  padding: 15px;
-  margin: 10px;
-}
-#update-form h4 {
-  background-color: rgba(0, 0, 0, 0.996);
-  color: rgba(255, 255, 255, 0.996);
-  width: 100%;
-  text-align: center;
-  margin: 10px;
-}
-#update-form .edit {
-  margin: 10px;
-  background-color: rgba(255, 255, 255, 0.996);
-  color: rgba(54, 161, 243, 0.996);
+.card {
+  margin-bottom: 15px;
 }
 
-.favorites {
-  background-color: rgba(255, 255, 255, 0.996);
+.edit {
+  margin-top: 5px;
 }
 .nav-bar {
   border: 2px solid rgba(0, 0, 0, 0.996);
