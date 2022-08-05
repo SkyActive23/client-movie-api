@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import { Button, Card, Col, Row } from 'react-bootstrap';
+import { Button, Card, Col, Figure, Row } from 'react-bootstrap';
 
 import './profile-view.scss';
 
@@ -26,42 +26,44 @@ export function FavoriteMovies(props) {
 	}
 
 	return (
-		<Card className="Card-Box">
-            <Row>
-                <Col>
-                    <h4>Favorite Movies</h4>
-                </Col>
-            </Row>
-            <Row>
-                {favoriteMoviesList.length === 0 ? (
-                    <p>Fav list is empty! Add some movies!</p>
-                ) : (
-                    favoriteMoviesList.map((movie) => {
-                        return (
-                            <Col className='Movie' xs={12} md={6} lg={3} key={movie._id}>
-                                <Card className='movie-card'>
-                                    <Card.Body className='card-body'>
-                                        <Card.Title>{movie.Title}</Card.Title>
-                                    </Card.Body>
-                                    <Link to={`/movies/${movie._id}`}>
-                                        <Card.Img  className="movie-img" variant="top" src={movie.ImageURL}/>
-                                    </Link>
-                                    <Button className="remove-button" size="sm" onClick={() => { handleDelete(movie._id) }} >
-                                            Remove
+		<Card>
+            <Card.Body>
+                <Row>
+                    <Col>
+                        <h4>Favorite Movies</h4>
+                    </Col>
+                </Row>
+                <Row>
+                    {favoriteMoviesList.length === 0 ? (
+                        <p>Fav list is empty! Add some movies!</p>
+                    ) : (
+                        favoriteMoviesList.map(({ ImageURL, Title, _id }) => {
+                            return (
+                                <Col xs={12} md={6} lg={3} key={_id} className='fav-movie'>
+                                    <Figure>
+                                        <Link to={`/movies/${_id}`}>
+                                            <Figure.Image
+                                                src= {ImageURL}
+                                                alt= {Title}
+                                            />
+                                        
+                                            <Figure.Caption>
+                                                {Title}
+                                            </Figure.Caption>
+                                        </Link>
+                                    </Figure>
+                                    <Button variant='outline-secondary' onClick={() => { handleDelete(_id) }} >
+                                                Remove
                                     </Button>
-                                    <Link to={`/movies/${movie._id}`}>
-                                        <Button className="open-button"  size="sm">
-                                            Open
-                                        </Button>
-                                    </Link>
-                                </Card>
-                            </Col>
-                        )
-                    })
-                )
-                }
+                                </Col>
+                            )
+                        })
+                    )
+                    }
 
-            </Row>
+                </Row>
+            </Card.Body>
+            
 		</Card>
 	)
 }
