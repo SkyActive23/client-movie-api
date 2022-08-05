@@ -8,38 +8,46 @@ $red-color: rgb(89, 9, 9);
     font-weight: bold;
 }
 
-.movie-view{
-    display: flex;
-    margin:1%;
-    float: center;
-    .movie-col{
-        background-color: lightgray;
-    }
-    .movie-info {
-            background-color: lightgray;
-            padding: 2%;   
-        }   .movie-img {
-            height: 250px;
-            float: center;
+
+.movie-view {
+    margin-bottom: 15px;
+    width: 100%;
+    figure {
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: auto;
+        width: 100%;
+        padding: 25px;
+        img {
+            display: block;
+            height: 500px;
+            width: 300px;
+            margin:auto;
         }
-        
-            .director-button {
-                background-color: $white-color;
-                color: $blue-color;
-        }   .back-button {
-                background-color: $white-color;
-                color: $blue-color;
-                width: 100%;
-        }   .add-button {
-                background-color: $green-color;
-                width: 100%;
-            }
-            
-            
-            
+    }
+    .text-card{
+        margin: auto;
+        border: 2px solid black;
+        padding: 5px 25px 5px 25px;
+    } 
+    .add-button {
+        display: block;
+        margin: auto;
+        width: 100%;
+        margin: 20px 0 10px 0;
+    }
+    .back-button{
+        display: block;
+        margin: auto;
+        width: 100%;
+        margin: 2px 0 2px 0;
+    }
 }
 
 .director-button {
     background-color: $white-color;
     color: $blue-color;
 }
+
