@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 import { Button, Col, Container, Row, Card } from 'react-bootstrap';
-
+import { UserInfo } from './user-info';
 import { FavoriteMovies } from './favorite-movies';
 import { UpdateUser } from './update-user';
 
@@ -44,26 +45,26 @@ export function ProfileView(props) {
 	}
 
 	return (
-		<Container className='profile-page'>
-            <Card className="profile-form">
-                <Row>
-                    <Col>
-                        <h4>Profile Info</h4>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col className="label">Username:</Col>
-                    <Col className="value">{user.Username}</Col>
-                </Row>
-                <Row className="mt-3">
-                    <Col className="label">Email:</Col>
-                    <Col className="value">{user.Email}</Col>
-                </Row>
-                <Row className="mt-3">
-                    <Col className="label">Birthday:</Col>
-                    <Col className="value">{user.Birthday}</Col>
-                </Row>
-            </Card>
+		<Container className='container'>
+            <Row>
+				<Col xs={12} sm={4}>
+					<Card>
+						<Card.Body>
+							<UserInfo 
+								name={user.Username}  
+								email={user.Email} 
+							/>
+						</Card.Body>
+					</Card>
+				</Col>
+				<Col xs={12} sm={8}>
+					<Card>
+						<Card.Body>
+							<UpdateUser user={user} />
+						</Card.Body>
+					</Card>
+				</Col>
+            </Row>
 			<Row className="Favorites">
 				<FavoriteMovies
 					movies={movies}
@@ -71,8 +72,16 @@ export function ProfileView(props) {
 					currentUser={currentUser}
 					token={token} />
 			</Row>
-			<UpdateUser user={user} />
+			
 			<Button className="danger" variant="outline-danger" onClick={handleDelete}>Delete profile</Button>
 		</Container>
 	)
 }
+
+const mapStateToProps = (state) => {
+	return {
+		user: state.user
+	}
+}
+
+export default connect(mapStateToProps)(ProfileView);
