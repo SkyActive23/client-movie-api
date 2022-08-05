@@ -41,19 +41,6 @@ export class MovieCard extends React.Component {
               <Button variant='outline-secondary' className="add-button" onClick={() => this.addToFavoriteList(movie._id) }>Add</Button>
         </Card.Body>
       </Card>
-
-      
-
-      // <Card className='movie-card'>
-      //   <Card.Body className='movie-body'>
-      //     <Card.Title className='title'>{movie.Title}</Card.Title>
-      //     <Card.Img className='movie-img' variant="top" src={movie.ImageURL}/>
-      //     
-      //     <Link to={`/movies/${movie._id}`}>
-      //         <Button className='open-button'>Open</Button>
-      //     </Link>
-      //   </Card.Body>
-      // </Card>
     );
   }
 }
