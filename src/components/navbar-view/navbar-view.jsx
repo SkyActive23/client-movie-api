@@ -1,6 +1,7 @@
 import React from "react";
 import './navbar-view.scss';
 import { Navbar, Container, Nav, Button, Offcanvas, NavDropdown, Form, FormControl } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 
 export function NavbarView({ user }) {
@@ -56,3 +57,11 @@ export function NavbarView({ user }) {
 
     )
 }
+
+const mapStateToProps = (state) => {
+	return {
+		user: state.user
+	}
+}
+
+export default connect(mapStateToProps, {})(NavbarView);
