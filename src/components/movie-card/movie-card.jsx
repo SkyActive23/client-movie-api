@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Col, Row, Figure } from 'react-bootstrap';
 import axios from 'axios';
 import './movie-card.scss';
 
@@ -25,16 +25,35 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card className='movie-card'>
-        <Card.Body className='movie-body'>
-          <Card.Title className='title'>{movie.Title}</Card.Title>
-          <Card.Img className='movie-img' variant="top" src={movie.ImageURL}/>
-          <Button className="add-button" onClick={() => this.addToFavoriteList(movie._id) }>Add</Button>
-          <Link to={`/movies/${movie._id}`}>
-              <Button className='open-button'>Open</Button>
-          </Link>
+      <Card>
+        <Card.Body className='movie-card'> 
+              <Figure>
+                  <Link to={`/movies/${movie._id}`}>
+                      <Figure.Image
+                        src= {movie.ImageURL}
+                        alt= {movie.Title}
+                      />
+                      <Figure.Caption>
+                        {movie.Title}
+                      </Figure.Caption>
+                  </Link>
+              </Figure>
+              <Button variant='outline-secondary' className="add-button" onClick={() => this.addToFavoriteList(movie._id) }>Add</Button>
         </Card.Body>
       </Card>
+
+      
+
+      // <Card className='movie-card'>
+      //   <Card.Body className='movie-body'>
+      //     <Card.Title className='title'>{movie.Title}</Card.Title>
+      //     <Card.Img className='movie-img' variant="top" src={movie.ImageURL}/>
+      //     
+      //     <Link to={`/movies/${movie._id}`}>
+      //         <Button className='open-button'>Open</Button>
+      //     </Link>
+      //   </Card.Body>
+      // </Card>
     );
   }
 }
