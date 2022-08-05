@@ -4,6 +4,9 @@ import axios from 'axios';
 import { Nav, Navbar, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 import './login-view.scss';
 
+import { connect } from 'react-redux'
+import { setUser } from '../../actions/actions';
+
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -35,7 +38,7 @@ export function LoginView(props) {
                         <CardGroup className='LogCardGroup'>
                             <Card>
                                 <Card.Body className="LogCard">
-                                    <Card.Title className='title'>Login Here</Card.Title>
+                                    <Card.Title className='title'><h4>Login Here</h4></Card.Title>
                                     <Form>
                                         <Form.Group controlId="formUsername">
                                             <Form.Label>Username:</Form.Label>
@@ -46,7 +49,7 @@ export function LoginView(props) {
                                             <Form.Label>Password:</Form.Label>
                                             <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
                                         </Form.Group>
-                                        <Button variant="primary" type="submit" onClick={handleSubmit} className="button">
+                                        <Button variant="primary" onClick={handleSubmit} className="button">
                                             Submit
                                         </Button>
                                     </Form>
@@ -67,3 +70,11 @@ LoginView.propTypes = {
     }),
     onLoggedIn: PropTypes.func.isRequired
   }
+
+const mapStateToProps = (state) => {
+    return {
+		user: state.user
+	};
+}
+
+export default connect(mapStateToProps, { setUser })(LoginView);
