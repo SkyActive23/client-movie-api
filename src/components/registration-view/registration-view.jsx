@@ -41,7 +41,7 @@ export function RegistrationView(props) {
                     <CardGroup className='RegCardGroup'>
                         <Card>
                             <Card.Body className="RegCard">
-                                <Card.Title className='title'>Register Here</Card.Title>
+                                <Card.Title className='title'><h4>Register Here</h4></Card.Title>
                                 <Form>
                                     <Form.Group>
                                         <Form.Label>Username:</Form.Label>
@@ -59,7 +59,7 @@ export function RegistrationView(props) {
                                         <Form.Label>Birthday:</Form.Label>
                                         <Form.Control type="date" value={birthday} onChange={(e) => setBirthday(e.target.value)}/>
                                     </Form.Group>
-                                    <Button type="submit" onClick={handleSubmit} className="button">Submit</Button>
+                                    <Button variant='primary' type="submit" onClick={handleSubmit} className="button">Submit</Button>
                                 </Form>
                             </Card.Body>
                         </Card>
