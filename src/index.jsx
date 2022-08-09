@@ -7,8 +7,6 @@ import { Provider } from 'react-redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import moviesApp from './reducers/reducers';
 
-import MainView from './components/main-view/main-view';
-
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';
 

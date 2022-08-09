@@ -38,24 +38,24 @@ export class MovieView extends React.Component {
                                 src= {movie.ImageURL}
                             />
                         </Figure>
-                        <Card.Text className='text-card'>
+                        <div className='text-card'>
                             <Row>
                                 <h5>Title:</h5> 
                             </Row> 
                             <Row>
-                                <Card.Text>{movie.Title}</Card.Text>
+                                <p>{movie.Title}</p>
                             </Row>
                             <Row>
                                 <h5>Description: </h5> 
                             </Row>
                             <Row>
-                                {movie.Description}
+                                <p>{movie.Description}</p>
                             </Row>
                             <Row>
                                 <h5>Genre:</h5> 
                             </Row>
                             <Row>
-                                {movie.Genre.Name}
+                                <p>{movie.Genre.Name}</p>
                             </Row>
                             <Row>
                                 <h5>Director:</h5> 
@@ -65,7 +65,7 @@ export class MovieView extends React.Component {
                                     {movie.Director.Name}
                                 </Link>
                             </Row>   
-                        </Card.Text>
+                        </div>
                     </Col> 
                     
                     <Button variant="outline-secondary"className="add-button" onClick={() => this.addToFavoriteList(movie._id) }>Add</Button>
