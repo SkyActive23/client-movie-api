@@ -72,11 +72,6 @@ h4 {
   width: 100%;
   margin: 2px 0 2px 0;
 }
-
-.director-button {
-  background-color: rgba(255, 255, 255, 0.996);
-  color: rgba(54, 161, 243, 0.996);
-}
 .main-view {
   background-color: rgb(89, 9, 9);
 }
@@ -119,6 +114,9 @@ h4 {
 
 .button {
   margin-top: 15px;
+}
+.nav-bar {
+  border: 2px solid rgba(0, 0, 0, 0.996);
 }
 .director-card {
   margin: 1%;
@@ -172,8 +170,5 @@ h4 {
 
 .edit {
   margin-top: 5px;
-}
-.nav-bar {
-  border: 2px solid rgba(0, 0, 0, 0.996);
 }
 /*# sourceMappingURL=index.caa67093.css.map */
