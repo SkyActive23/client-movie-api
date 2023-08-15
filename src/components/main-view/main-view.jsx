@@ -1,24 +1,22 @@
-import React from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 
-import './main-view.scss';
-import { NavbarView } from '../navbar-view/navbar-view';
-import { RegistrationView } from '../registration-view/registration-view';
-import { LoginView } from '../login-view/login-view';
-import { MovieCard } from '../movie-card/movie-card';
-import { MovieView } from '../movie-view/movie-view';
+import { Col, Row } from 'react-bootstrap';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
+import { LoginView } from '../login-view/login-view';
+import { MovieView } from '../movie-view/movie-view';
+import { NavbarView } from '../navbar-view/navbar-view';
 import { ProfileView } from '../profile-view/profile-view';
-import { Nav, Navbar, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import { RegistrationView } from '../registration-view/registration-view';
+import './main-view.scss';
 
 // #0
-import { setMovies, setUser } from '../../actions/actions';
+import { setMovies } from '../../actions/actions';
 
 // we haven't written this one yet
 import MoviesList from '../movies-list/movies-list';
